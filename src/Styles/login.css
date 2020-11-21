@@ -1,0 +1,13 @@
+.input-test {
+    border-radius: 4px;
+}
+
+.login-form {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background: black;
+    max-width: 360px;
+    padding: 45px;
+}
