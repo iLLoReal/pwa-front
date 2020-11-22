@@ -6,7 +6,7 @@ function Kanban() {
     var items = []
     for (const [index, value] of cards.entries()) {
         items.push(<Card key={index} name={value} />)
-      }
+    }
 
     return (
         <div className="listCard">
