@@ -11,7 +11,8 @@ function NavbarComponent() {
   console.log("Re-render");
   if (
     !window.localStorage.getItem("id") &&
-    window.location.href.search("/login") === -1
+    window.location.href.search("/login") === -1 &&
+    window.location.href.search("/signup") === -1
   ) {
     window.location.href = "/login";
   }
