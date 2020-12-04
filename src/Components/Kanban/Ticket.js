@@ -5,7 +5,6 @@ import { modifyTagTicket } from "../../Services/RequestTickets";
 function Ticket(value) {
   const tags = JSON.parse(window.localStorage.getItem("cards"));
   const [tagSelected, setTagSelected] = useState(value.name.tags);
-  console.log(value);
 
   const handleChangeSelect = async (e) => {
     console.log(e.target.value);

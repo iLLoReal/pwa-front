@@ -1,14 +1,16 @@
 import Axios from "axios";
 
 async function requestTicketCreate(data) {
-  const result = await fetch({
-    url: `${process.env.REACT_APP_API_URL}/ticket/create`,
+  const url = process.env.REACT_APP_API_URL + "/ticket/create";
+  console.log(url);
+  const result = await Axios({
+    url: url,
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
       Accept: "application/json",
     }),
-    body: JSON.stringify(data),
+    data: data,
   });
   return result;
 }

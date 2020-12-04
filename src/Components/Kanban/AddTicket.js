@@ -25,6 +25,7 @@ function AddTicket() {
       description: ticketDesc,
       tags: ticketTag,
     });
+    console.log(result);
     // if (result.status === 200) {
     //   window.location.reload();
     // }
