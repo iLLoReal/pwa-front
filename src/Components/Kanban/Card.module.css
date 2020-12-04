@@ -1,0 +1,24 @@
+.listwrapper {
+  background: #e0e0e0;
+  margin-bottom: 10px;
+  padding: 8px;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  min-width: 170px;
+  border-radius: 2px;
+}
+
+.nameheader {
+  text-align: center;
+  padding: 6px;
+  margin: 0;
+}
+
+.listTicket {
+  list-style-type: none;
+  padding-left: 0;
+  background: #e0e0e0;
+  margin: 0 5px;
+  padding: 8px;
+  border-radius: 2px;
+}

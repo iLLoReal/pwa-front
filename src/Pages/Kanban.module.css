@@ -1,0 +1,14 @@
+.lists {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style-type: none;
+}
