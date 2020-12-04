@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import Webcam from "react-webcam";
 
 function AddTicket() {
+  const tags = JSON.parse(window.localStorage.getItem("cards"));
   const [ticketName, setTicketName] = useState("");
   const [ticketDesc, setTicketDesc] = useState("");
   const [ticketTag, setTicketTag] = useState("");
@@ -54,12 +55,19 @@ function AddTicket() {
       </div>
       <div style={{ display: "table-row" }}>
         <label style={{ display: "table-cell" }}>Tag Ticket : </label>
-        <input
-          type="text"
-          name="nameTicket"
-          onChange={handleChangeTicketTag}
+        <select
           style={{ display: "table-cell" }}
-        />
+          onChange={handleChangeTicketTag}
+          value={ticketTag}
+        >
+          {tags.map((v, index) => {
+            return (
+              <option value={v} key={index}>
+                {v}
+              </option>
+            );
+          })}
+        </select>
       </div>
       <div>
         <Button variant="dark" onClick={handleSubmit}>

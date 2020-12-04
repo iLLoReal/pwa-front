@@ -8,5 +8,5 @@ self.addEventListener("push", (event) => {
 });
 
 self.addEventListener("notificationclick", (event) => {
-  clients.openWindow("http://localhost:5000/kanban");
+  clients.openWindow("https://app-front-pwa.herokuapp.com/kanban");
 });
