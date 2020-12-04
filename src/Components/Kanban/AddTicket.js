@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { requestTicketCreate } from "../../Services/RequestTickets";
+import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function AddTicket() {
   const [ticketName, setTicketName] = useState("");
   const [ticketDesc, setTicketDesc] = useState("");
   const [ticketTag, setTicketTag] = useState("");
+  const history = useHistory();
 
   const handleChangeTicketName = (e) => {
     setTicketName(e.target.value);
@@ -26,20 +29,44 @@ function AddTicket() {
       tags: ticketTag,
     });
     console.log(result);
-    // if (result.status === 200) {
-    //   window.location.reload();
-    // }
+    if (result.status === 200) {
+      history.push("/kanban");
+    }
   };
   return (
-    <div>
-      <label>Name Ticket</label>
-      <input type="text" name="nameTicket" onChange={handleChangeTicketName} />
-      <label>Description Ticket</label>
-      <input type="text" name="nameTicket" onChange={handleChangeTicketDesc} />
-      <label>Tag Ticket</label>
-      <input type="text" name="nameTicket" onChange={handleChangeTicketTag} />
-      <button onClick={handleSubmit}>Create Ticket</button>
-      <input type="text" onClick={handleSubmit} />
+    <div style={{ display: "table" }}>
+      <div style={{ display: "table-row" }}>
+        <label style={{ display: "table-cell" }}>Name Ticket : </label>
+        <input
+          type="text"
+          name="nameTicket"
+          style={{ display: "table-cell" }}
+          onChange={handleChangeTicketName}
+        />
+      </div>
+      <div style={{ display: "table-row" }}>
+        <label style={{ display: "table-cell" }}>Description Ticket : </label>
+        <input
+          type="text"
+          name="nameTicket"
+          style={{ display: "table-cell" }}
+          onChange={handleChangeTicketDesc}
+        />
+      </div>
+      <div style={{ display: "table-row" }}>
+        <label style={{ display: "table-cell" }}>Tag Ticket : </label>
+        <input
+          type="text"
+          name="nameTicket"
+          onChange={handleChangeTicketTag}
+          style={{ display: "table-cell" }}
+        />
+      </div>
+      <div>
+        <Button variant="dark" onClick={handleSubmit}>
+          Create Ticket
+        </Button>
+      </div>
     </div>
   );
 }

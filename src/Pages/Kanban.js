@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Card from "../Components/Kanban/Card";
 import style from "./Kanban.module.css";
-import AddTicket from "../Components/Kanban/AddTicket";
 
 function Kanban() {
   const cards = JSON.parse(window.localStorage.getItem("cards"));
@@ -12,7 +11,6 @@ function Kanban() {
 
   return (
     <div>
-      <AddTicket />
       <div style={{ display: "block" }}>
         <ul className={style.lists}>{items}</ul>
       </div>

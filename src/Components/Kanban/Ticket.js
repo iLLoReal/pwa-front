@@ -24,7 +24,6 @@ function Ticket(value) {
     <li className={styles.ticket} draggable="true">
       <h2>{value.name.name}</h2>
       <p>{value.name.description}</p>
-      <p>{value.name.tags}</p>
       <select onChange={handleChangeSelect} value={tagSelected}>
         {tags.map((v, index) => {
           return (

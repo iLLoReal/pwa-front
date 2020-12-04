@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-//import RequestLogin from "./RequestLogin";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -8,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { requestLogin } from "../Services/RequestLogin";
+import { requestCreateUser } from "../Services/RequestLogin";
 import { Context } from "../Components/State/Store";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,11 +26,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Login() {
+function SignUp() {
   const classes = useStyles();
   const history = useHistory(); //permet la redirection directe ? en gardant en mémoire l'historic de l'utilisateur ?
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
@@ -45,15 +45,18 @@ function Login() {
     setPassword(e.target.value);
   };
 
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleSubmit = async () => {
-    const result = await requestLogin({
+    const result = await requestCreateUser({
       username: username,
       password: password,
+      email: email,
     });
-    window.localStorage.setItem("id", result.data.user._id);
-    dispatch({ type: "LOGIN", payload: { username: result.username } });
     if (result.data.success === true) {
-      history.push("/kanban");
+      history.push("/login");
     }
   };
 
@@ -83,10 +86,20 @@ function Login() {
           id="password"
           onChange={handleChangePwd}
         />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          label="Email"
+          type="text"
+          id="email"
+          onChange={handleChangeEmail}
+        />
         <button onClick={handleSubmit}>Sign In</button>
         <Grid container>
           <Grid item>
-            <Link href="/signup" variant="body2">
+            <Link href="#" variant="body2">
               {"Don't have an account? Sign Up"}
             </Link>
           </Grid>
@@ -96,4 +109,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
