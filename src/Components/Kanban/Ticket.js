@@ -7,17 +7,13 @@ function Ticket(value) {
   const [tagSelected, setTagSelected] = useState(value.name.tags);
 
   const handleChangeSelect = async (e) => {
-    console.log(e.target.value);
     setTagSelected(e.target.value);
-    console.log(tagSelected);
-    console.log(value.name.tags);
     if (value.name.tags !== e.target.value) {
       const result = await modifyTagTicket(
         { tags: e.target.value },
         value.name._id
       );
-      console.log(result);
-      window.location.reload();
+      if (result.status === 200) window.location.reload();
     }
   };
   return (

@@ -2,7 +2,6 @@ import Axios from "axios";
 
 async function requestTicketCreate(data) {
   const url = process.env.REACT_APP_API_URL + "/ticket/create";
-  console.log(url);
   const result = await Axios({
     url: url,
     method: "POST",

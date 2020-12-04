@@ -8,7 +8,6 @@ import AddTicket from "../Kanban/AddTicket";
 import SignUp from "../../Pages/SignUp";
 
 function NavbarComponent() {
-  console.log(window.location.href.search("/login"));
   if (
     !window.localStorage.getItem("id") &&
     window.location.href.search("/login") === -1
