@@ -14,7 +14,7 @@
     "react-webcam": "^5.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build && cra-append-sw --skip-compile ./public/custom-sw.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
