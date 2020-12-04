@@ -65,7 +65,7 @@ function SignUp() {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign Up
         </Typography>
         <TextField
           variant="outlined"
@@ -96,14 +96,7 @@ function SignUp() {
           id="email"
           onChange={handleChangeEmail}
         />
-        <button onClick={handleSubmit}>Sign In</button>
-        <Grid container>
-          <Grid item>
-            <Link href="#" variant="body2">
-              {"Don't have an account? Sign Up"}
-            </Link>
-          </Grid>
-        </Grid>
+        <button onClick={handleSubmit}>Sign Up</button>
       </div>
     </Container>
   );
