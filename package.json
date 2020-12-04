@@ -11,7 +11,8 @@
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.8",
-    "react-webcam": "^5.2.2"
+    "react-webcam": "^5.2.2",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "start": "./node_modules/.bin/serve -s build",
@@ -28,8 +29,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "serve": "^11.3.2"
-  }
+  ]
 }
