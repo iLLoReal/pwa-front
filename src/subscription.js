@@ -19,13 +19,18 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 function sendSubscription(subscription) {
-  return fetch(`${process.env.REACT_APP_API_URL}/subscribe`, {
-    method: "POST",
-    body: JSON.stringify(subscription),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return fetch(
+    `${
+      process.env.REACT_APP_API_URL
+    }/subscribe?id=${window.localStorage.getItem("id")}`,
+    {
+      method: "POST",
+      body: JSON.stringify(subscription),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 }
 
 export function subscribeUser() {
