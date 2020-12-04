@@ -8,12 +8,19 @@ import AddTicket from "../Kanban/AddTicket";
 import SignUp from "../../Pages/SignUp";
 
 function NavbarComponent() {
+  console.log("Re-render");
   if (
     !window.localStorage.getItem("id") &&
     window.location.href.search("/login") === -1
   ) {
     window.location.href = "/login";
   }
+  navigator.getMedia =
+    navigator.getUserMedia || // use the proper vendor prefix
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia;
+
   return (
     <div>
       <div className="row">

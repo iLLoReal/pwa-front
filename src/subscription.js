@@ -21,7 +21,6 @@ function urlBase64ToUint8Array(base64String) {
 function sendSubscription(subscription) {
   var sub = subscription;
   const id = { id: window.localStorage.getItem("id") };
-  console.log(JSON.stringify({ sub: sub, id: id }));
   return fetch(`${process.env.REACT_APP_API_URL}/subscribe`, {
     method: "POST",
     body: JSON.stringify({ sub: sub, id: id }),

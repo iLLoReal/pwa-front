@@ -8027,6 +8027,11 @@ react-transition-group@^4.4.0, react-transition-group@^4.4.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-webcam@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-5.2.2.tgz#a7b278bd448e14cc2a67cb5f978a2b8aa36352f6"
+  integrity sha512-hy/uQlqQMKtjFdPN9i6r8OTU3axTuGIMg1zgrnHjKHvPfepxskBPW8GhIrNMQxtG70ADfQ3W/a/VhvpeFXrFtA==
+
 react@^16.8.4:
   version "16.8.5"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.5.tgz#49be3b655489d74504ad994016407e8a0445de66"

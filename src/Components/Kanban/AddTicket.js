@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { requestTicketCreate } from "../../Services/RequestTickets";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Webcam from "react-webcam";
 
 function AddTicket() {
   const [ticketName, setTicketName] = useState("");
@@ -22,13 +23,11 @@ function AddTicket() {
   };
 
   const handleSubmit = async () => {
-    console.log(ticketName, ticketDesc, ticketTag);
     const result = await requestTicketCreate({
       name: ticketName,
       description: ticketDesc,
       tags: ticketTag,
     });
-    console.log(result);
     if (result.status === 200) {
       history.push("/kanban");
     }
@@ -66,6 +65,9 @@ function AddTicket() {
         <Button variant="dark" onClick={handleSubmit}>
           Create Ticket
         </Button>
+      </div>
+      <div>
+        <Webcam audio={false} height={200} width={200} />
       </div>
     </div>
   );
