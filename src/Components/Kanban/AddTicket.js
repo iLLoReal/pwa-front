@@ -25,9 +25,9 @@ function AddTicket() {
       description: ticketDesc,
       tags: ticketTag,
     });
-    if (result.status === 200) {
-      window.location.reload();
-    }
+    // if (result.status === 200) {
+    //   window.location.reload();
+    // }
   };
   return (
     <div>
@@ -38,6 +38,7 @@ function AddTicket() {
       <label>Tag Ticket</label>
       <input type="text" name="nameTicket" onChange={handleChangeTicketTag} />
       <button onClick={handleSubmit}>Create Ticket</button>
+      <input type="text" onClick={handleSubmit} />
     </div>
   );
 }

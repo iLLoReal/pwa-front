@@ -50,21 +50,16 @@ function Login() {
       username: username,
       password: password,
     });
-    window.localStorage.setItem("id", result.data.id);
+    console.log(result);
+    window.localStorage.setItem("id", result.data.user._id);
     dispatch({ type: "LOGIN", payload: { username: result.username } });
-    if (result.data.success === true) {
-      history.push("/");
-    }
+    // if (result.data.success === true) {
+    //   history.push("/");
+    // }
   };
 
   return (
     <Container component="main" maxWidth="xs">
-      <input
-        onClick={() => {
-          requestLogin({ username: "oui", password: "oui" });
-          history.push("/");
-        }}
-      />
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">

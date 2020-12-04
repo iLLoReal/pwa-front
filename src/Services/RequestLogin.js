@@ -2,7 +2,7 @@ import Axios from "axios";
 
 async function requestLogin(data) {
   const result = await Axios({
-    url: "https://api-pwa-project.herokuapp.com/users/login",
+    url: `${process.env.REACT_APP_API_URL}/users/login`,
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
