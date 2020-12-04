@@ -2,7 +2,7 @@ import Axios from "axios";
 
 async function requestTicketCreate(data) {
   const result = await Axios({
-    url: "http://https://api-pwa-project.herokuapp.com/ticket/create",
+    url: `${process.env.REACT_APP_API_URL}/ticket/create`,
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -15,7 +15,7 @@ async function requestTicketCreate(data) {
 
 async function requestTicketGetAll() {
   const result = await Axios({
-    url: "http://https://api-pwa-project.herokuapp.com/ticket/",
+    url: `${process.env.REACT_APP_API_URL}/ticket/`,
     method: "GET",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -34,9 +34,8 @@ async function filterDataTag(tagCard) {
 }
 
 async function modifyTagTicket(newTag, idTicket) {
-  console.log(newTag);
   const result = await Axios({
-    url: "http://https://api-pwa-project.herokuapp.com/ticket/" + idTicket,
+    url: `${process.env.REACT_APP_API_URL}/ticket/${idTicket}`,
     method: "PUT",
     headers: new Headers({
       "Content-Type": "application/x-www-form-urlencoded",
